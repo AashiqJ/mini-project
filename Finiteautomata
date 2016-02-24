@@ -1,0 +1,357 @@
+#include<string.h>
+#include<stdio.h>
+#include<graphics.h>
+#include<conio.h>
+#include<stdio.h>
+#include<dos.h>
+void proj();
+void main()
+{
+	int gd=DETECT,gm;
+	initgraph(&gd,&gm,"C:\\TC\\BGI");
+	setbkcolor(RED);
+	setcolor(YELLOW);
+	settextstyle(7,HORIZ_DIR,4);
+	outtextxy(160,180,"!!  WELCOME   !!");
+	outtextxy(35,280," Mini Project on Finite Automata");
+       //	getch();
+       delay(3000);
+	cleardevice();
+	closegraph();
+	proj();
+}
+void proj()
+{
+	int gd=DETECT,gm,i,u;
+	char a,b,c,d,e,f;
+	initgraph(&gd,&gm,"C:\\TC\\BGI");
+	printf("Enter the states\n\n\n");
+	printf("\t0\t1\n");
+	printf("X\t");
+scanf("\t%c\t%c",&a,&b);
+printf("Y\t");
+scanf("\t%c\t%c",&c,&d);
+printf("Z\t");
+scanf("\t%c\t%c",&e,&f);
+
+outtextxy(10,150,"Loading");
+
+delay(2000);
+printf("\n\nPress Enter...");
+getch();
+cleardevice();
+delay(1000);
+line(50,240,90,240);
+line(85,235,90,240);
+line(90,240,85,245);
+
+circle(120,240,25);
+circle(320,240,25);
+for(i=20;i<=25;i=i+5)
+{
+circle(520,240,i);
+}
+
+outtextxy(120,240,"X");
+outtextxy(320,240,"Y");
+outtextxy(520,240,"Z");
+
+if((a=='x') && (b=='x'))
+{
+ delay(1000);
+	ellipse(110,220,20,200,15,30);
+line(127,205,124,212);     //left side
+line(124,212,121,205);     //--"--
+outtextxy(108,180,"0");
+outtextxy(108,195,"1");
+}
+else if((a=='y')&&(b=='y'))
+{
+ delay(1000);
+line(145,240,295,240);
+line(290,235,295,240);   //right side
+line(295,240,290,245);    //--"--
+outtextxy(210,245,"1");
+outtextxy(210,230,"0");
+}
+else if((a=='z')&&(b=='z'))
+{
+ delay(1000);
+	arc(320,157,210,330,215);
+	line(503,278,506,265);  //right side
+line(506,265,494,270);  //--"--
+outtextxy(305,360,"1");
+outtextxy(305,375,"0");
+}
+else if((a=='x')&&(b=='y'))
+{
+ delay(1000);
+ellipse(110,220,20,200,15,30);
+line(127,205,124,212);     //left side
+line(124,212,121,205);     //--"--
+outtextxy(108,180,"0");
+line(145,240,295,240);
+line(290,235,295,240);   //right side
+line(295,240,290,245);    //--"--
+outtextxy(210,245,"1");
+}
+else if((a=='y')&&(b=='x'))
+{ delay(1000);
+ellipse(110,220,20,200,15,30);
+line(127,205,124,212);     //left side
+line(124,212,121,205);     //--"--
+outtextxy(108,195,"1");
+line(145,240,295,240);
+line(290,235,295,240);   //right side
+line(295,240,290,245);    //--"--
+outtextxy(210,230,"0");
+}
+else if((a=='y')&&(b=='z'))
+{ delay(1000);
+	line(345,240,495,240);
+	line(490,235,495,240); //right side
+line(495,240,490,245);   //--"--
+outtextxy(425,245,"0");
+arc(320,157,210,330,215);
+line(503,278,506,265);  //right side
+line(506,265,494,270);  //--"--
+outtextxy(305,360,"1");
+}
+else if((a=='z')&&(b=='y'))
+{ delay(1000);
+arc(320,157,210,330,215);
+line(503,278,506,265);  //right side
+line(506,265,494,270);  //--"--
+outtextxy(305,360,"0");
+line(345,240,495,240);
+	line(490,235,495,240); //right side
+line(495,240,490,245);   //--"--
+outtextxy(425,245,"1");
+}
+else if((a=='x')&&(b=='z'))
+{ delay(1000);
+ellipse(110,220,20,200,15,30);
+line(127,205,124,212);     //left side
+line(124,212,121,205);     //--"--
+outtextxy(108,180,"0");
+arc(320,157,210,330,215);
+line(503,278,506,265);  //right side
+line(506,265,494,270);  //--"--
+outtextxy(305,360,"1");
+}
+else if((a=='z')&&(b=='x'))
+{ delay(1000);
+ellipse(110,220,20,200,15,30);
+line(127,205,124,212);     //left side
+line(124,212,121,205);     //--"--
+outtextxy(108,180,"1");
+arc(320,157,210,330,215);
+line(503,278,506,265);  //right side
+line(506,265,494,270);  //--"--
+outtextxy(305,360,"0");
+}
+else
+{ delay(1000);
+printf("Invalid");
+}
+
+
+if((c=='x')&&(d=='x'))
+{ delay(1000);
+	arc(220,265,30,150,100);
+	line(133,205,133,215); //left side
+line(133,215,140,213); // --"--
+outtextxy(215,150,"1");
+outtextxy(215,175,"0");
+}
+else if((c=='y')&&(d=='y'))
+{ delay(1000);
+	ellipse(320,210,350,190,10,30);
+line(313,210,310,216);
+line(310,216,306,210);
+outtextxy(317,187,"0");
+outtextxy(317,167,"1");
+}
+else if((c=='z')&&(d=='z'))
+{ delay(1000);
+	line(345,240,495,240);
+	line(490,235,495,240); //right side
+line(495,240,490,245);   //--"--
+outtextxy(425,230,"1");
+outtextxy(425,245,"0");
+}
+else if((c=='x')&&(d=='y'))
+{ delay(1000);
+	arc(220,265,30,150,100);
+line(133,205,133,215); //left side
+line(133,215,140,213); // --"--
+outtextxy(215,175,"0");
+ellipse(320,210,350,190,10,30);
+line(313,210,310,216);
+line(310,216,306,210);
+outtextxy(317,167,"1");
+
+}
+else if((c=='x')&&(d=='z'))
+{ delay(1000);
+arc(220,265,30,150,100);
+line(133,205,133,215); //left side
+line(133,215,140,213); // --"--
+outtextxy(215,175,"0");
+arc(320,157,210,330,215);
+line(503,278,506,265);  //right side
+line(506,265,494,270);  //--"--
+outtextxy(305,360,"1");
+}
+
+else if((c=='y')&&(d=='x'))
+{ delay(1000);
+ellipse(320,210,350,190,10,30);
+line(313,210,310,216);
+line(310,216,306,210);
+outtextxy(317,187,"0");
+arc(220,265,30,150,100);
+line(133,205,133,215); //left side
+line(133,215,140,213); // --"--
+	outtextxy(215,175,"1");
+}
+else if((c=='y')&&(d=='z'))
+{ delay(1000);
+ellipse(320,210,350,190,10,30);
+line(313,210,310,216);
+line(310,216,306,210);
+outtextxy(317,187,"0");
+arc(420,215,210,330,100);
+line(503,278,506,265);  //right side
+line(506,265,494,270);  //--"--
+outtextxy(415,320,"1");
+}
+else if((c=='z')&&(d=='x'))
+{ delay(1000);
+	arc(420,265,30,150,100);
+line(507,205,506,215); //right side
+line(506,215,497,210);  //--"--
+outtextxy(417,150,"0");
+arc(220,265,30,150,100);
+line(133,205,133,215); //left side
+line(133,215,140,213); // --"--
+outtextxy(215,150,"1");
+}
+else if((c=='z')&&(d=='y'))
+{ delay(1000);
+	line(345,240,495,240);
+	line(490,235,495,240); //right side
+line(495,240,490,245);   //--"--
+outtextxy(425,245,"0");
+ellipse(320,210,350,190,10,30);
+line(313,210,310,216);
+line(310,216,306,210);
+outtextxy(317,167,"1");
+
+
+}
+else
+{ delay(1000);
+printf("Invalid");
+
+}
+
+
+if((e=='x')&&(f=='x'))
+{ delay(1000);
+	arc(320,323,30,150,215); //huge arc up
+line(133,205,133,215); //left side
+line(133,215,140,213); // --"--
+outtextxy(305,97,"1");
+outtextxy(305,112,"0");
+}
+else if((e=='y')&&(f=='y'))
+{ delay(1000);
+	arc(420,265,30,150,100);
+line(335,205,334,215);   //left side
+line(334,215,342,213);   //--"--
+outtextxy(417,175,"1");
+outtextxy(417,150,"0");
+}
+else if((e=='z')&&(f=='z'))
+{ delay(1000);
+	ellipse(533,220,340,160,15,30);
+line(522,205,519,212);
+line(519,212,515,205);
+outtextxy(530,180,"1");
+outtextxy(530,195,"0");
+}
+else if((e=='x')&&(f=='y'))
+{ delay(1000);
+	arc(320,323,30,150,215); //huge arc up
+line(133,205,133,215); //left side
+line(133,215,140,213); // --"--
+outtextxy(305,112,"0");
+arc(420,265,30,150,100);
+line(335,205,334,215);   //left side
+line(334,215,342,213);   //--"--
+outtextxy(417,175,"1");
+}
+else if((e=='x')&&(f=='z'))
+{ delay(1000);
+	arc(320,323,30,150,215); //huge arc up
+line(133,205,133,215); //left side
+line(133,215,140,213); // --"--
+outtextxy(305,112,"0");
+ellipse(533,220,340,160,15,30);
+line(522,205,519,212);
+line(519,212,515,205);
+outtextxy(530,180,"1");
+}
+else if((e=='y')&&(f=='x'))
+{ delay(1000);
+	arc(420,265,30,150,100);
+line(335,205,334,215);   //left side
+line(334,215,342,213);   //--"--
+outtextxy(417,150,"0");
+arc(320,323,30,150,215); //huge arc up
+line(133,205,133,215); //left side
+line(133,215,140,213); // --"--
+outtextxy(305,112,"1");
+}
+else if((e=='y')&&(f=='z'))
+{ delay(1000);
+arc(420,265,30,150,100);
+line(335,205,334,215);   //left side
+line(334,215,342,213);   //--"--
+outtextxy(417,150,"0");
+ellipse(533,220,340,160,15,30);
+line(522,205,519,212);
+line(519,212,515,205);
+outtextxy(530,180,"1");
+}
+else if((e=='z')&&(f=='x'))
+{ delay(1000);
+ellipse(533,220,340,160,15,30);
+line(522,205,519,212);
+line(519,212,515,205);
+outtextxy(530,180,"0");
+arc(320,323,30,150,215); //huge arc up
+line(133,205,133,215); //left side
+line(133,215,140,213); // --"--
+outtextxy(305,112,"1");
+}
+else if((e=='z')&&(f=='y'))
+{ delay(1000);
+	ellipse(533,220,340,160,15,30);
+line(522,205,519,212);
+line(519,212,515,205);
+outtextxy(530,180,"0");
+arc(420,215,210,330,100);
+line(335,278,333,265);   //left side
+line(333,265,345,270);   //--"--
+outtextxy(415,320,"1");
+}
+else
+{ delay(1000);
+	printf("Invalid");
+}
+
+//closegraph();
+ getch();
+ }
